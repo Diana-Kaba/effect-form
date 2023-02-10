@@ -20,7 +20,9 @@ function f(label) {
 }
 
 function mapf(item, index) {
-  return `<span style="transition-delay: ${index * 50}ms;">${item}</span>`;
+  return `<span style="transition-delay: ${
+    400 - index * 50
+  }ms;">${item}</span>`;
 }
 
 // 3
