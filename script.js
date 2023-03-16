@@ -15,14 +15,17 @@
 //2
 let labels = document.querySelectorAll("label");
 labels.forEach(f);
+
 function f(label) {
-  label.innerHTML = label.innerText.split("").map(mapf).join("");
+  label.innerHTML = label.innerText.split("").map(mapf(label)).join("");
 }
 
-function mapf(item, index) {
-  return `<span style="transition-delay: ${
-    400 - index * 50
-  }ms;">${item}</span>`;
+function mapf(label) {
+  return function (item, index) {
+    return `<span style="transition-delay: ${
+      label.innerText.length * 10 - index * 50
+    }ms;">${item}</span>`;
+  };
 }
 
 // 3
